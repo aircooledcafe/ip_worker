@@ -4,13 +4,13 @@ from workers import wsgi
 app = Flask(__name__)
 
 
+# @app.route("/", methods=["GET"])
+# def home():
+#     return render_template("index.html")
+#     #return "Hello World Test"
+
+
 @app.route("/", methods=["GET"])
-def home():
-    return render_template("index.html")
-    #return "Hello World Test"
-
-
-@app.route("/ip", methods=["GET"])
 def return_ip():
     client_info = {
         "client_ip": request.headers.get("Cf-Connecting-Ip"),
