@@ -4,5 +4,6 @@
   "main": "app.py",
   // Set this to today's date
   "compatibility_date": "2026-09-18",
-  "compatibility_flags": ["python_workers"]
+  "compatibility_flags": ["python_workers"],
+  "routes": [{ "pattern": "ip.techben.dev", "custom_domain": true }]
 }
