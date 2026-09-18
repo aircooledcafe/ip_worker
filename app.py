@@ -4,7 +4,8 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def home():
-    return render_template("index.html")
+    #return render_template("index.html")
+    return "Hello World Test"
 
 
 @app.route("/ip", methods=["GET"])
