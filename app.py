@@ -7,11 +7,12 @@ def home():
     return render_template("index.html")
 
 
-@app.route("/", methods=["GET"])
+@app.route("/ip", methods=["GET"])
 def return_ip():
     client_info = {
         "client_ip": request.remote_addr,
-        "user_agent": request.user_agent.string
+        "user_agent": request.user_agent.string,
+        "header": dict(request.headers)
     }
     return jsonify(client_info)
 
