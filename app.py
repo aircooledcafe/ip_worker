@@ -13,8 +13,9 @@ def home():
 @app.route("/ip", methods=["GET"])
 def return_ip():
     client_info = {
-        "client_ip": request.remote_addr,
-        "user_agent": request.user_agent.string,
+        "client_ip": request.headers.get("Cf-Connecting-Ip"),
+        "user_agent": request.headers.get("User-Agent"),
+        "x-real-ip": request.headers.get("X-Real-Ip"),
         "header": dict(request.headers),
     }
     return jsonify(client_info)
