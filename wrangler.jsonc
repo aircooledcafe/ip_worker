@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ip-worker",
+  "main": "app.py",
+  // Set this to today's date
+  "compatibility_date": "2026-09-18",
+  "compatibility_flags": ["python_workers"]
+}
