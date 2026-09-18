@@ -14,7 +14,7 @@ def home():
 def return_ip():
     client_info = {
         "client_ip": request.headers.get("Cf-Connecting-Ip"),
-        "user_agent": request.headers.get("User-Agent"),
+        "user_agent": request.user_agent.string,
         "x-real-ip": request.headers.get("X-Real-Ip"),
         "header": dict(request.headers),
     }
