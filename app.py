@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, render_template, request
+from workers import wsgi
 
 app = Flask(__name__)
 
@@ -19,5 +20,6 @@ def return_ip():
     return jsonify(client_info)
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0")
+Default = wsgi.entrypoint(app)
