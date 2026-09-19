@@ -16,6 +16,7 @@ def return_ip():
         "client_ip": request.remote_addr,
         "cf-connecting-ip": request.headers.get("Cf-Connecting-Ip"),
         "x-real-ip": request.headers.get("X-Real-Ip"),
+        "x-forwarded-for": request.headers.get("X-Forwarded-For"),
     }
     return jsonify(client_info)
 
